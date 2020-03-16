@@ -1,0 +1,36 @@
+table,tr,td{
+	position: relative;
+	left: 18%;
+	border: 5px solid black;
+	padding: 100px;
+	border-collapse: collapse;
+	border-top-style: none;
+	border-left-style: none;
+}
+table,tr{
+	border-right-style: none;
+	border-bottom-style: none;
+}
+#esqTop{
+	border-left-style: none;
+	border-top-style: none;
+	background-color: white;
+}
+#dirTop{
+	border-right-style: none;
+	border-top-style: none;
+}
+#dirMid{
+	border-right-style: none;	
+}
+#meiBot{
+	border-bottom-style: none;
+}
+#esqBot{
+	border-left-style: none;
+	border-bottom-style: none;
+}
+#dirBot{
+	border-right-style: none;
+	border-bottom-style: none;
+}

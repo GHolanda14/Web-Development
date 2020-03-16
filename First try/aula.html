@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Minha primeira página HTML</title>
+		<style type="text/css">
+			#txt{
+				width: 400px;
+				float: left;
+			}
+			a{
+				 text-decoration: none;
+				 color:blue	;
+			}
+			table,td,th{
+				padding: 5px;
+				border: 2px solid black;
+				text-align: center;
+				border-collapse: collapse;
+			}
+			form{
+				border: 2px dashed black;
+				padding: 10px;
+			}
+
+		</style>
+	</head>
+
+	<body>
+		<div style=" width: 200px">
+			<h1 style="background-color: blue">Chupa Galvão</h1>
+		</div>
+		<hr>
+		<h2 style="background-color: lightblue; width: 160px"> Seu arrombado </h2>
+		<p style="font-size: 25px"> Te odiamos </p>
+		<p style="color: red; font-size: 20px;">Todo brasileiro que se preze <del>odeia a narração e enchimento de saco
+		</br></del> ama a narração do <b style="color:black">Galvão Bueno</b>, então essa página expressa o </br>desejo de muitos brasileiros. Acesse esse <a href="https://cultura.estadao.com.br/noticias/geral,estudo-mostra-que-publico-ama-e-odeia-galvao-bueno,20060630p60941" target="_blank">site</a> para confirmar que estamos certos!</p>
+
+	<!--<dl>
+  			<dt>Coffee</dt>
+			<dd> - black hot drink</dd>
+			<dt>Milk</dt>
+			<dd>- white cold drink</dd>
+		</dl>-->
+
+		<p>Para ter uma base, aqui vai uma tabela das pessoas famosas mais odiadas:</p>
+
+		<table>
+			<caption>Votação</caption>
+			<tr>
+				<th>Nome</th>
+				<th>Votos</th>
+			</tr>
+			<tr>
+				<td>Galvão Bueno</td>
+				<td>19201294</td>
+			</tr>
+			<tr>
+				<td>Otávio Mesquita</td>
+				<td>781212</td>
+			</tr>
+			<tr>
+				<td>Fátima Bernardes</td>
+				<td>121923</td>
+			</tr>
+		</table>
+		
+		<p>Logo, nosso rank fica assim: </p>
+		<ol type="1">
+			<li>Galvão Bueeno</li>
+			<li>Otávio Mesquita</li>
+			<li>Fátima Bernardes</li>
+		</ol>
+
+		<p> Responda agora nosso questionário para firmar mais ainda nosso ponto!</p>
+
+		<form id="txt" method="GET">
+			Selecione seu sexo:<br>
+			<input type="radio" name="genero" value="Masculino" required>Masculino<br>
+			<input type="radio" name="genero" value="Feminino">Feminino<br>
+			<input type="radio" name="genero" value="NaoBinario">Não binário<br><br>
+			Digite sua idade: <input type="number" name="idade" min="10" max="70" required><br><br>
+			Baseado nos bordões a seguir, decida de quem é o mais chato:
+			<input type="radio" name="votacao" value="galvao" required><i><q>Haja Coração</q></i> - Galvão Bueno<br>
+			<input type="radio" name="votacao" value="otavio"><i><q>Okay pessoal!</q></i> - Otávio Mesquita<br>
+			<input type="radio" name="votacao" value="fatima"><i><q>Estamos começando mais um encontro
+			com Fátima Bernardes</q></i> - Fátima Bernardes<br><br>
+			
+			<input type="submit" name="Enviar">
+		</form>
+
+		<p id="txt" style="margin-top: 300px; position: absolute;"> Para mais informações, conheça o desenvolvedor desse site, clique na sua imagem: </p>
+
+		<div style="margin-top: 330px;margin-left: 150px;position: fixed;">
+				<a href="https://www.facebook.com/gabriel.holanda.56" target="_blank">
+					<img src="foto.jpg" alt="Gabriel Holanda" style="width: 160px;height: 200px;">
+				</a>
+		</div>
+	</body> 
+
+</html>
