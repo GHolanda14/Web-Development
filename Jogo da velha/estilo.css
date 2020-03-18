@@ -12,25 +12,12 @@ table,tr{
 	border-right-style: none;
 	border-bottom-style: none;
 }
-#esqTop{
-	border-left-style: none;
-	border-top-style: none;
-}
-#dirTop{
+.rightBorderOut{
 	border-right-style: none;
-	border-top-style: none;
 }
-#dirMid{
-	border-right-style: none;	
-}
-#meiBot{
-	border-bottom-style: none;
-}
-#esqBot{
+.leftBorderOut{
 	border-left-style: none;
-	border-bottom-style: none;
 }
-#dirBot{
-	border-right-style: none;
+.botBorderOut{
 	border-bottom-style: none;
 }
