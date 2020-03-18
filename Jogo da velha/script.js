@@ -1,8 +1,8 @@
 var jogador = 0;
 var v1,v2,v3;
 function validar(id){
-	var a = document.getElementById(id).style.backgroundColor;
-	if(a == "red" || a == "blue"){
+	var a = document.getElementById(id).value;	
+	if(a == 0 || a == 1){
 		return false;
 	}
 	else{
@@ -12,11 +12,13 @@ function validar(id){
 function jogada(id){
 	if(validar(id)){
 		if(jogador == 0){
-			document.getElementById(id).style.backgroundColor = "red";
+			document.getElementById(id).style.backgroundImage = "url('corounavairus.jpg')";
+			document.getElementById(id).value = 0;
 			jogador = 1;	
 		}
 		else{
-			document.getElementById(id).style.backgroundColor = "blue";
+			document.getElementById(id).style.backgroundImage = "url('chicocunha.jpg')";
+			document.getElementById(id).value = 1;
 			jogador = 0;		
 		}
 		if(!vencedor()){
@@ -29,25 +31,25 @@ function jogada(id){
 }
 
 function campeaoHorizontal(){
-	v1 = document.getElementById("esqTop").style.backgroundColor;
-	v2 = document.getElementById("meiTop").style.backgroundColor;
-	v3 = document.getElementById("dirTop").style.backgroundColor;
+	v1 = document.getElementById("esqTop").value;
+	v2 = document.getElementById("meiTop").value;
+	v3 = document.getElementById("dirTop").value;
 	if(v1 == v2 && v2 == v3){
 		anuncio(v1);
 		return true;
 	}
 
-	v1 = document.getElementById("esqMid").style.backgroundColor;
-	v2 = document.getElementById("meiMid").style.backgroundColor;
-	v3 = document.getElementById("dirMid").style.backgroundColor;
+	v1 = document.getElementById("esqMid").value;
+	v2 = document.getElementById("meiMid").value;
+	v3 = document.getElementById("dirMid").value;
 	if(v1 == v2 && v2 == v3){
 		anuncio(v1);
 		return true;
 	}
 
-	v1 = document.getElementById("esqBot").style.backgroundColor;
-	v2 = document.getElementById("meiBot").style.backgroundColor;
-	v3 = document.getElementById("dirBot").style.backgroundColor;
+	v1 = document.getElementById("esqBot").value;
+	v2 = document.getElementById("meiBot").value;
+	v3 = document.getElementById("dirBot").value;
 	if(v1 == v2 && v2 == v3){
 		anuncio(v1);
 		return true;
@@ -57,25 +59,25 @@ function campeaoHorizontal(){
 	Bug do vencedor e velha ao mesmo tempo quando sobra so um espaço*/
 
 function campeaoVertical(){
-	v1 = document.getElementById("esqTop").style.backgroundColor;
-	v2 = document.getElementById("esqMid").style.backgroundColor;
-	v3 = document.getElementById("esqBot").style.backgroundColor;
+	v1 = document.getElementById("esqTop").value;
+	v2 = document.getElementById("esqMid").value;
+	v3 = document.getElementById("esqBot").value;
 	if(v1 == v2 && v2 == v3){
 		anuncio(v1);
 		return true;
 	}
 
-	v1 = document.getElementById("meiTop").style.backgroundColor;
-	v2 = document.getElementById("meiMid").style.backgroundColor;
-	v3 = document.getElementById("meiBot").style.backgroundColor;
+	v1 = document.getElementById("meiTop").value;
+	v2 = document.getElementById("meiMid").value;
+	v3 = document.getElementById("meiBot").value;
 	if(v1 == v2 && v2 == v3){
 		anuncio(v1);
 		return true;
 	}
 
-	v1 = document.getElementById("dirTop").style.backgroundColor;
-	v2 = document.getElementById("dirMid").style.backgroundColor;
-	v3 = document.getElementById("dirBot").style.backgroundColor;
+	v1 = document.getElementById("dirTop").value;
+	v2 = document.getElementById("dirMid").value;
+	v3 = document.getElementById("dirBot").value;
 	if(v1 == v2 && v2 == v3){
 		anuncio(v1);
 		return true;
@@ -84,17 +86,17 @@ function campeaoVertical(){
 }
 
 function campeaoDiagonal(){
-	v1 = document.getElementById("esqTop").style.backgroundColor;
-	v2 = document.getElementById("meiMid").style.backgroundColor;
-	v3 = document.getElementById("dirBot").style.backgroundColor;
+	v1 = document.getElementById("esqTop").value;
+	v2 = document.getElementById("meiMid").value;
+	v3 = document.getElementById("dirBot").value;
 	if(v1 == v2 && v2 == v3){
 		anuncio(v1);
 		return true;
 	}
 
-	v1 = document.getElementById("dirTop").style.backgroundColor;
-	v2 = document.getElementById("meiMid").style.backgroundColor;
-	v3 = document.getElementById("esqBot").style.backgroundColor;
+	v1 = document.getElementById("dirTop").value;
+	v2 = document.getElementById("meiMid").value;
+	v3 = document.getElementById("esqBot").value;
 	if(v1 == v2 && v2 == v3){
 		anuncio(v1);
 		return true;
@@ -107,7 +109,7 @@ function empate(){
 	var tabela = document.getElementById("tabela");
 	var celula = tabela.getElementsByTagName("td");
 	for(var i = 0; i < celula.length;i++){
-		if(celula[i].style.backgroundColor == ""){
+		if(celula[i].value == undefined){
 			contador++;
 		}
 	}
@@ -116,12 +118,12 @@ function empate(){
 	}
 }
 
-function anuncio(cor){
-	if(cor == "red"){
-		setTimeout( function(){alert("Jogador N 1 ganhou!");confirmacao();},10);
+function anuncio(valor){
+	if(valor == 0){
+		setTimeout( function(){alert("COROUNA VAIRUS ganhou!");confirmacao();},10);
 	}
-	else if(cor == "blue"){
-		setTimeout( function(){alert("Jogador N 2 ganhou!");confirmacao();},10);
+	else if(valor == 1){
+		setTimeout( function(){alert("CHICO CUNHA ganhou!");confirmacao();},10);
 	}
 	
 }

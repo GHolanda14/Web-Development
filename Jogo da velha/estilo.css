@@ -6,6 +6,10 @@ table,tr,td{
 	border-collapse: collapse;
 	border-top-style: none;
 	border-left-style: none;
+	background-size: 202px 205px;
+}
+td{
+	
 }
 table,tr{
 	border-right-style: none;
