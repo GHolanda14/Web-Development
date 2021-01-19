@@ -1,0 +1,18 @@
+table,tr,td{
+    border: 2px solid;
+}
+
+.tabuleiro{
+    display: flex;
+    border: none;
+    justify-content: center;
+    border-collapse: collapse;
+    
+}
+tr{
+    margin: auto;
+}
+td{
+    width: 90px;
+    height: 72px;
+}
