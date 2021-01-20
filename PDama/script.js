@@ -30,8 +30,7 @@ function colorir(){
 
 /*Função para preencher o tabuleiro de dama com peças*/
 function preencher(){
-    let tabuleiro = document.querySelector('table');
-    let linhas = tabuleiro.rows;
+    let linhas = document.querySelector('table').rows;
 
     for(let i = 0; i < 8; i++){
         for(let j = 0; j < 8; j++){
