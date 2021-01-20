@@ -1,4 +1,17 @@
-/* Função para colorir o tabuleiro de Dama ou xadrez */
+/*Função para criar o tabuleiro de Dama*/
+function criarTabuleiro(){
+    let tabuleiro = document.querySelector('.tabuleiro');
+    let conteudo = '';
+    for(let i = 0; i < 8;i++){
+        conteudo += '<tr>';
+        for(let j = 0; j < 8; j++){
+            conteudo += '<td><span></span></td>';
+        }
+        conteudo += '</tr>';
+    }
+    tabuleiro.innerHTML += conteudo;
+}
+/* Função para colorir o tabuleiro de Dama*/
 
 function colorir(){
     let tabuleiro = document.getElementsByTagName('td');
@@ -14,4 +27,28 @@ function colorir(){
         }       
     }
 }
+
+/*Função para preencher o tabuleiro de dama com peças*/
+function preencher(){
+    let tabuleiro = document.querySelector('table');
+
+    for(let i = 0; i < 3; i++){
+        for(let j = 0; j < 8; j++){
+            if(tabuleiro.rows[i].children[j].style.backgroundColor == 'black'){
+                tabuleiro.rows[i].children[j].firstElementChild.setAttribute('class','pecaBranca');
+            }
+        }
+    }
+
+    for(let i = 5; i < 8; i++){
+        for(let j = 0; j < 8; j++){
+            if(tabuleiro.rows[i].children[j].style.backgroundColor != 'black'){
+                tabuleiro.rows[i].children[j].firstElementChild.setAttribute('class','pecaPreta');
+            }
+        }
+    }
+
+}
+criarTabuleiro();
 colorir();
+preencher();
