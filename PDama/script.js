@@ -31,23 +31,18 @@ function colorir(){
 /*Função para preencher o tabuleiro de dama com peças*/
 function preencher(){
     let tabuleiro = document.querySelector('table');
+    let linhas = tabuleiro.rows;
 
-    for(let i = 0; i < 3; i++){
+    for(let i = 0; i < 8; i++){
         for(let j = 0; j < 8; j++){
-            if(tabuleiro.rows[i].children[j].style.backgroundColor == 'black'){
-                tabuleiro.rows[i].children[j].firstElementChild.setAttribute('class','pecaBranca');
+            if(i<3 && linhas[i].children[j].style.backgroundColor == 'black'){
+                linhas[i].children[j].firstElementChild.setAttribute('class','pecaBranca');
+            }
+            else if(i > 4 && linhas[i].children[j].style.backgroundColor != 'black'){
+                linhas[i].children[j].firstElementChild.setAttribute('class','pecaPreta');
             }
         }
     }
-
-    for(let i = 5; i < 8; i++){
-        for(let j = 0; j < 8; j++){
-            if(tabuleiro.rows[i].children[j].style.backgroundColor != 'black'){
-                tabuleiro.rows[i].children[j].firstElementChild.setAttribute('class','pecaPreta');
-            }
-        }
-    }
-
 }
 criarTabuleiro();
 colorir();
