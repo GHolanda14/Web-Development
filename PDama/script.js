@@ -2,11 +2,11 @@ const tabuleiro = document.querySelector('.tabuleiro');
 
 /*Função para criar o tabuleiro de Dama*/
 function criarTabuleiro(){
-    let conteudo = '';
+    let conteudo = ``;
     for(let i = 0; i < 8;i++){
         conteudo += '<tr>';
         for(let j = 0; j < 8; j++){
-            conteudo += '<td><span></span></td>';
+            conteudo += `<td id='${i+1}_${j+1}'onclick='mostrarMovimento(id)'><span></span></td>`;
         }
         conteudo += '</tr>';
     }
@@ -16,15 +16,16 @@ function criarTabuleiro(){
 
 function colorir(){
     let casa = document.getElementsByTagName('td');
-    let linha = 2;
+    let linha,coluna;
     for(let i = 0; i < casa.length; i++){
-        if(linha % 2 == 0){
-            if(i % 2 == 0)casa[i].style.backgroundColor = 'black';
-            (i+1) % 8 == 0 ? linha = 1 : linha = 2;
+        linha = casa[i].id.split('_')[0];
+        coluna = casa[i].id.split('_')[1];
+
+        if(linha % 2 == 1){
+            if(coluna % 2 == 1)casa[i].style.backgroundColor = 'black';
         }
-        else if(linha % 2 == 1){
-            if(i % 2 != 0)casa[i].style.backgroundColor = 'black';
-            (i+1) % 8 == 0 ? linha = 2 : linha = 1;
+        else if(linha % 2 == 0){
+            if(coluna % 2 == 0)casa[i].style.backgroundColor = 'black';
         }       
     }
 }
@@ -35,14 +36,27 @@ function preencher(){
 
     for(let i = 0; i < 8; i++){
         for(let j = 0; j < 8; j++){
-            if(i<3 && linhas[i].children[j].style.backgroundColor == 'black'){
-                linhas[i].children[j].firstElementChild.setAttribute('class','pecaBranca');
-            }
-            else if(i > 4 && linhas[i].children[j].style.backgroundColor != 'black'){
-                linhas[i].children[j].firstElementChild.setAttribute('class','pecaPreta');
+            if(linhas[i].cells[j].style.backgroundColor == 'black'){
+                if(i<3){
+                    linhas[i].cells[j].firstElementChild.setAttribute('class','pecaVermelha');
+                }
+                else if(i > 4){
+                    linhas[i].cells[j].firstElementChild.setAttribute('class','pecaAzul');
+                }
             }
         }
     }
+}
+
+/*Função para demonstrar movimentos disponíveis*/
+function mostrarMovimento(id){
+    let linha = id.split('_')[0];//3
+    let coluna = id.split('_')[1];//3
+    //Pode se mover para 4_2 ou 4_4
+    //Só funciona com as peças de cima :(
+
+    console.log(`You can move to: ${linha-1+2}_${coluna-1} or ${linha-1+2}_${coluna-1+2}`);
+
 }
 criarTabuleiro();
 colorir();
