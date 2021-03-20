@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Splash</title>
+    
+    <link href="style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">       
+    
+</head>
+<body>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLabel">Login</h4>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form> 
+                        <div class="mb-3">
+                            <label class="col-form-label" placeholder="Escreva seu nome...">Nome:</label>
+                            <input type="text" class="form-control" id="usuario">
+                        </div>
+                
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" onclick="login()" class="btn btn-primary" data-dismiss="modal">OK</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="d-flex bd-highlight mb-3">
+                    <div class="borda">
+                        <div class="p-2 bd-highlight">
+                            <h1>Splash</h1>
+                        </div>
+                    </div>
+                    <div class="ms-auto p-2 bd-highlight">
+                        <h3 id="user"></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-4">
+                    <p>Grupo</p>
+            </div>
+            <div class="col-8">
+            <!--    <div>
+                    <h2>Gabriel</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro ex quam ducimus dolorem ullam velit expedita qui! Tempore non vero itaque ad eos temporibus, quis sequi inventore nisi! Recusandae, dolor?</p>
+                </div>
+                <div>
+                    <h2>Gabriel</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro ex quam ducimus dolorem ullam velit expedita qui! Tempore non vero itaque ad eos temporibus, quis sequi inventore nisi! Recusandae, dolor?</p>
+                </div>
+                <div>
+                    <h2>Gabriel</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro ex quam ducimus dolorem ullam velit expedita qui! Tempore non vero itaque ad eos temporibus, quis sequi inventore nisi! Recusandae, dolor?</p>
+                </div>
+                <div>
+                    <h2>Gabriel</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro ex quam ducimus dolorem ullam velit expedita qui! Tempore non vero itaque ad eos temporibus, quis sequi inventore nisi! Recusandae, dolor?</p>
+                </div>
+                <div>
+                    <h2>Gabriel</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro ex quam ducimus dolorem ullam velit expedita qui! Tempore non vero itaque ad eos temporibus, quis sequi inventore nisi! Recusandae, dolor?</p>
+                </div>
+                <div>
+                    <h2>Gabriel</h2>
+                    <p>Estou animado com isso!</p>
+                </div>
+                <div>
+                    <h2>Gabriel</h2>
+                    <p>Estou animado com isso!</p>
+                </div>
+                -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                    <p>Novo grupo</p>
+            </div>
+            <div class="col">
+                <textarea class="texto" placeholder="Write a message..."></textarea>
+                <button class="btn-success"type="submit">Enviar</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    
+    <script type="text/javascript" src="script.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>    
+    <!--<script>
+        $(document).ready(function(){
+            $("#exampleModal").modal();
+        });
+        </script>
+    -->
+</body>
+</html>
