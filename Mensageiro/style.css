@@ -1,47 +1,80 @@
+body{
+    overflow: hidden;
+}
+
+img{
+    height: 50px;
+}
+
+.paginaGrupos{
+    display: inline-flex;
+    flex-direction: column;
+    width: max-content;
+}
+
+.grupo{
+    display: inline-flex;
+    margin: 10px;
+
+}
+
 .texto{
     resize: none;
-    word-wrap: break-word;
-    width: 650px;
-    height: 70px;
+    flex-grow: 2;
     border-radius: 10px;
     padding: 10px;
     background-color: whitesmoke;
-    margin-top: 5px;
     font-size: large;
+    margin-top: 5px;
+}
+
+textarea:focus{
+    background-color: white;
+}
+
+.col-12{
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.item{
+    align-self: center;
 }
 
 .btn-success{
-    position: absolute;
     align-self: center;
-    margin-left: 660px;    
-}
-textarea:focus{
-    background-color: white;
 }
 
 .container{
     width: 900px;
     background-color: teal;
-    height: 100vh;    
+    height: 100vh;
 }
 
 .col-4{
     border-right: 2px solid #E9EBED;
+    overflow-y: scroll;
+    max-height: 77vh;
+}
+
+.col-8{
+    height: 77vh;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+}
+
+.col{
+    display: flex;
+    flex-grow: 1;
+    min-height: 10vh;
+    max-height: 15vh;
 }
 
 .row{
     border-top: 2px solid #E9EBED;
 }
-
-.col-8{
-    height: 450px;
-    overflow-y: scroll;
-}
-
-.col{
-    display: inline-flex;    
-}
-
 /*CSS da barra de rolagem*/
 
 ::-webkit-scrollbar{

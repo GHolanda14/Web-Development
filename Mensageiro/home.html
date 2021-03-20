@@ -40,76 +40,117 @@
     
     <div class="container">
         <div class="row">
-            <div class="col-12">
+            <div class="col-12">                
+                    <div>
+                        <h3>Splash</h3>                        
+                    </div>
+                    <div>
+                        <h3 id="user">Usuário</h3>
+                    </div>
+                <!--
                 <div class="d-flex bd-highlight mb-3">
-                    <div class="borda">
-                        <div class="p-2 bd-highlight">
-                            <h1>Splash</h1>
-                        </div>
+                    <div class="p-2 bd-highlight">
+                        <h1>Splash</h1>                        
                     </div>
                     <div class="ms-auto p-2 bd-highlight">
                         <h3 id="user"></h3>
                     </div>
+                    -->
                 </div>
             </div>
-        </div>
+        
         
         <div class="row">
             <div class="col-4">
-                    <p>Grupo</p>
+                <div class="paginaGrupos">
+
+                </div>
             </div>
-            <div class="col-8">
-            <!--    <div>
+            <div id="paginaMensagens" class="col-8">
+                <div>
                     <h2>Gabriel</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro ex quam ducimus dolorem ullam velit expedita qui! Tempore non vero itaque ad eos temporibus, quis sequi inventore nisi! Recusandae, dolor?</p>
+                    <p>PRimeira mensagem</p>
                 </div>
                 <div>
                     <h2>Gabriel</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro ex quam ducimus dolorem ullam velit expedita qui! Tempore non vero itaque ad eos temporibus, quis sequi inventore nisi! Recusandae, dolor?</p>
+                    <p>Segunda mensagem</p>
                 </div>
                 <div>
                     <h2>Gabriel</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro ex quam ducimus dolorem ullam velit expedita qui! Tempore non vero itaque ad eos temporibus, quis sequi inventore nisi! Recusandae, dolor?</p>
+                    <p>Terceira Mensagem</p>
                 </div>
                 <div>
                     <h2>Gabriel</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro ex quam ducimus dolorem ullam velit expedita qui! Tempore non vero itaque ad eos temporibus, quis sequi inventore nisi! Recusandae, dolor?</p>
+                    <p>Quarta mensagem</p>
                 </div>
                 <div>
                     <h2>Gabriel</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro ex quam ducimus dolorem ullam velit expedita qui! Tempore non vero itaque ad eos temporibus, quis sequi inventore nisi! Recusandae, dolor?</p>
+                    <p>Quinta mesnagem</p>
                 </div>
                 <div>
                     <h2>Gabriel</h2>
-                    <p>Estou animado com isso!</p>
+                    <p>sexta mensgem</p>
                 </div>
-                <div>
-                    <h2>Gabriel</h2>
-                    <p>Estou animado com isso!</p>
-                </div>
-                -->
             </div>
         </div>
         <div class="row">
             <div class="col-4">
-                    <p>Novo grupo</p>
+                    <input type="text" class="texto" placeholder="Nome do grupo..." maxlength="25">
+                    <button class="btn-success" type="button" onclick="criarGrupo()">Inserir</button>
             </div>
             <div class="col">
                 <textarea class="texto" placeholder="Write a message..."></textarea>
-                <button class="btn-success"type="submit">Enviar</button>
+                <button class="btn-success" type="button" onclick="teste()">Enviar</button>
             </div>
         </div>
     </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    
-    
     <script type="text/javascript" src="script.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>    
-    <!--<script>
-        $(document).ready(function(){
-            $("#exampleModal").modal();
-        });
-        </script>
-    -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        carregarGrupo();
+
+        function pegarGrupos(grupo){
+            axios({
+                method: "GET",
+                url: "https://server-json-lms.herokuapp.com/grupos/"+grupo.id,
+            }).then((response)=>{
+                let grupinhos = insercao(grupo.nome);
+                paginaGrupos.appendChild(grupinhos);
+            }).catch((error)=>{
+                console.log(error);
+            })
+        }
+
+        function carregarGrupo(){
+            axios({
+                method: "GET",
+                url: "https://server-json-lms.herokuapp.com/grupos",
+            }).then((response)=>{
+                let grupos = response.data;
+                for(grupo of grupos){
+                    pegarGrupos(grupo);
+                }
+            }).catch((error)=>{
+                console.log(error);
+            })
+        }
+
+        function criarGrupo(){
+            let nomeGrupo = document.querySelector('.col-4 .texto');
+            axios({
+                method: "POST",
+                url: "https://server-json-lms.herokuapp.com/grupos",
+                data: {"nome": nomeGrupo.value},
+            }).then((response)=>{
+                pegarGrupos(response.data);
+                nomeGrupo.value = "";
+            }).catch((error)=>{
+                console.log(error);
+            }) 
+        }
+     </script>
 </body>
 </html>
