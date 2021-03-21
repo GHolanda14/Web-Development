@@ -1,82 +1,126 @@
+/*Estilo de componentes*/
 body{
     overflow: hidden;
 }
-
 img{
     height: 50px;
 }
+textarea:focus{
+    background-color: white;
+}
+.container{
+    width: 900px;
+    background-color:rgb(224, 206, 206);
+    height: 100vh;
+}
 
+/* Estilo do grupo*/
 .paginaGrupos{
     display: inline-flex;
     flex-direction: column;
-    width: max-content;
+    box-sizing: border-box;
+    width: 100%;
 }
-
 .grupo{
     display: inline-flex;
     margin: 10px;
-
+    cursor: pointer;
+    border-bottom: 1px solid black;
+    padding: 10px;
+}
+.col-4{
+    border-right: 2px solid #E9EBED;
+    overflow-y: scroll;
+    max-height: 77vh;
+    padding: 0px;
 }
 
+
+/*Estilo do chat*/
 .texto{
     resize: none;
     flex-grow: 2;
     border-radius: 10px;
-    padding: 10px;
+    padding: 5px;
     background-color: whitesmoke;
     font-size: large;
     margin-top: 5px;
 }
 
-textarea:focus{
-    background-color: white;
+.mensagem{
+    border: 2px solid;
+    border-radius: 25px;
+    margin: 5px;
+    padding: 5px;
+    padding-top: 0px;
+    width: fit-content;
 }
 
-.col-12{
-    display: inline-flex;
-    flex-direction: row;
-    justify-content: space-between;
+.mensagem p{
+    margin-left: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: medium;
+    color: rgb(12, 11, 11);
 }
 
-.item{
-    align-self: center;
+.mensagem h2{
+    color:rgb(190, 47, 47);
+    margin-top: 10px;
 }
 
-.btn-success{
-    align-self: center;
-}
-
-.container{
-    width: 900px;
-    background-color: teal;
-    height: 100vh;
-}
-
-.col-4{
-    border-right: 2px solid #E9EBED;
-    overflow-y: scroll;
-    max-height: 77vh;
-}
-
-.col-8{
+.paginaMensagens{
     height: 77vh;
     overflow-y: scroll;
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
+    width: 100%;
 }
 
 .col{
     display: flex;
     flex-grow: 1;
-    min-height: 10vh;
-    max-height: 15vh;
+    min-height: 8vh;
+    max-height: 12vh;
+}
+
+/*Estilo formularios*/
+.formulario{
+    display: inline-flex;
+    flex-grow: 1;
+}
+.formularioGrupo{
+    display: flex;
+    flex-direction: column;
+}
+
+/*Estilo cabeçalho*/
+.col-12{
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: teal;
+}
+
+
+/*Botões*/
+.inserir{
+    align-self: flex-end;
+    margin: 5px;
+}
+.enviar{
+    align-self: center;
+    margin-left: 5px;
+}
+.btn-primary{
+    float: right;
 }
 
 .row{
     border-top: 2px solid #E9EBED;
 }
-/*CSS da barra de rolagem*/
 
+
+/*CSS da barra de rolagem*/
 ::-webkit-scrollbar{
     width: 5px;
 }
@@ -87,9 +131,9 @@ textarea:focus{
 }
 
 ::-webkit-scrollbar-thumb {
-    background: darkblue; 
+    background: #555252; 
     border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: #b30000; 
+    background: #000000; 
 }
