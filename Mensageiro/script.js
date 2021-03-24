@@ -37,7 +37,7 @@ function montarMensagem(mensagem){
     let nome = document.createElement("h2");
     nome.textContent = mensagem.nome;
 
-    let corpo = document.createElement("p");
+    let corpo = document.createElement("pre");
     corpo.textContent = mensagem.corpo;
 
     divisor.appendChild(nome);
@@ -72,5 +72,5 @@ function login(){
 }
 
 function rolagemAutomatica(){
-	paginaMensagens.scrollTop = paginaMensagens.scrollHeight;
+	paginaMensagens.scrollTop = paginaMensagens.scrollHeight;//Rolando a pagina pra baixo
 }

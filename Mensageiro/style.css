@@ -56,11 +56,13 @@ textarea:focus{
     width: fit-content;
 }
 
-.mensagem p{
+.mensagem pre{
     margin-left: 20px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: medium;
     color: rgb(12, 11, 11);
+    background: none;
+    border: none;
 }
 
 .mensagem h2{
