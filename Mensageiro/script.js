@@ -2,8 +2,8 @@ let idGrupo;
 let usuario;
 const paginaMensagens = document.getElementById('chat');
 const paginaGrupos = document.querySelector('.paginaGrupos');
-const formGp = document.getElementById('formGp');
-const formMsg = document.getElementById('formMsg');
+let formGp = document.getElementById('formGp');
+let formMsg = document.getElementById('formMsg');
 const formModal = document.getElementById('formModal');
 
 /*Iniciando a página já com o modal disponível*/
@@ -15,11 +15,13 @@ $(document).ready(function(){
 formGp.addEventListener("submit",(event)=>{
     event.preventDefault();//Impedir que a página atualize
     criarGrupo();
+    formGp.reset();
 })
 
 formMsg.addEventListener("submit",(event)=>{
     event.preventDefault();
     criarMensagem();
+    formMsg.reset();
 })
 
 /*Função para enviar a mensagem com o enter*/

@@ -1,3 +1,6 @@
+let nomeGrupo = document.querySelector('.col-4 .texto');
+let texto = document.querySelector(".col .texto");
+
 /*Funções do grupo*/
 function adicionarGrupo(grupo){
     axios({
@@ -26,14 +29,12 @@ function carregarGrupos(){
 }
 
 function criarGrupo(){
-    let nomeGrupo = document.querySelector('.col-4 .texto');
     axios({
         method: "POST",
         url: "https://server-json-lms.herokuapp.com/grupos",
         data: {"nome": nomeGrupo.value},
     }).then((response)=>{
         adicionarGrupo(response.data);
-        nomeGrupo.value = "";
     }).catch((error)=>{
         console.log(error);
     }) 
@@ -61,7 +62,6 @@ function carregarMensagens(id){
 }
 
 function criarMensagem(){
-    let texto = document.querySelector(".col .texto");
     axios({
         method: "POST",
         url: "https://server-json-lms.herokuapp.com/grupos/"+idGrupo
@@ -69,7 +69,6 @@ function criarMensagem(){
         data: {"nome": usuario,"corpo": texto.value,"grupoId": idGrupo},
     }).then((response)=>{
         carregarMensagens(idGrupo);
-        texto.value = "";
     }).catch((error)=>{
         console.log(error);
     })
